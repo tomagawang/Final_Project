@@ -2,7 +2,7 @@ import json
 import urllib.request
 import pprint
 
-def get_quote():
+def get_insult():
     url = f'https://evilinsult.com/generate_insult.php?lang=en&type=json'
     # print(url)
     f = urllib.request.urlopen(url)
@@ -13,7 +13,7 @@ def get_quote():
     return quote
 
 def main():
-    print(get_quote())
+    print(get_insult())
 
 if __name__ == "__main__":
     main()
