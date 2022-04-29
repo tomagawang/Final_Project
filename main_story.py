@@ -41,7 +41,12 @@ def main_story():
         player.son_affection -= 1
     else:
         player.son_affection += 1
-    
+        player.wife_affection += 1
+    son2 = act1_02()
+    player.son_affection += son2
+    if son2 > 1:
+        player.wife_affection += 1
+
     print(player)
 
 def main():

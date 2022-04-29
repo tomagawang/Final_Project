@@ -2,13 +2,13 @@ from pprint import pprint
 from multiple_choice import multiple_choice
 import sentiment
 from apis import get_insult
-
+from math_game import math_game
 def opening():
     pprint("""You are the CFO of Colson Group; you are currently striking a deal to purchase an manufacturing plant. The seller offer is $1500000, but you believe the value of manufacturing plant is only about $1000000, and your company do not wish to pay more than $250000 in premium. You were given $1250000, you can't pay more than that. Your latest offer was $900000. Seller says: $1450000 is our last offer. If you do not take it, then we will look for someone else.""")
 
 
 def act1_01():
-    pprint('''After you finished your work, you walk on the helipad and boards your luxurious helicopter home. You enjoy a helicopter ride cruising down the city lights and busy streets and suddenly arrives at a mansion on the cliff of a mountain hill. After you landed, you saw your family gathering around a table and singing Happy Birthday to your son. You forgot it is his birthday today which your wife reminded you this morning.''')
+    pprint('''After you finished your work, you walk on the helipad and boards your luxurious helicopter home. Your butler awaits you and assists you boarding the helicopter. You enjoy a helicopter ride cruising down the city lights and busy streets and suddenly arrives at a mansion on the cliff of a mountain hill. After you landed, you saw your family gathering around a table and singing Happy Birthday to your son. You forgot it is his birthday today which your wife reminded you this morning.''')
     pprint('''Choose A: Lie to your son and tell him that his birthday gift is late. B: Be honest with your son and apologize.''')
     answer1 = multiple_choice()
     if answer1 == 0:
@@ -45,7 +45,13 @@ def act1_03():
         if answer1 == 0:
             return 2
         else:
-            pass
+            result = math_game()
+            if result == 2:
+                return 3
+            if result == 1:
+                return 2
+            else:
+                return 0
     else:
         pprint('Your son remains quiet and continues to play vidoe games. You are not sure what to do, so you left for work.')
         return 0
