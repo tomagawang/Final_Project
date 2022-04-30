@@ -3,11 +3,13 @@ from multiple_choice import multiple_choice
 import sentiment
 from apis import get_insult
 from math_game import math_game
+
 def opening():
     pprint("""You are the CFO of Colson Group; you are currently striking a deal to purchase an manufacturing plant. The seller offer is $1500000, but you believe the value of manufacturing plant is only about $1000000, and your company do not wish to pay more than $250000 in premium. You were given $1250000, you can't pay more than that. Your latest offer was $900000. Seller says: $1450000 is our last offer. If you do not take it, then we will look for someone else.""")
 
 
 def act1_01():
+    '''part 1 of act 1'''
     pprint('''After you finished your work, you walk on the helipad and boards your luxurious helicopter home. Your butler awaits you and assists you boarding the helicopter. You enjoy a helicopter ride cruising down the city lights and busy streets and suddenly arrives at a mansion on the cliff of a mountain hill. After you landed, you saw your family gathering around a table and singing Happy Birthday to your son. You forgot it is his birthday today which your wife reminded you this morning.''')
     pprint('''Choose A: Lie to your son and tell him that his birthday gift is late. B: Be honest with your son and apologize.''')
     answer1 = multiple_choice()
@@ -21,9 +23,10 @@ def act1_01():
         return 1
 
 def act1_02():
+    '''part 2 of act 1'''
     pprint("You decides to check on your son. His bedroom door is locked, but you can hear that he is playing video games. You knocks on it a few times, there is no answer.")
-    input = "Say something to your son to convince him to open the door:"
-    posi = sentiment.natural_language_processing(input)
+    input1 = input("Say something to your son to convince him to open the door:")
+    posi = sentiment.natural_language_processing(input1)
     if posi == 1:
         pprint("Your son opens the door and ask you what you want, you tell him that you just want to talk to him.")
         act1_03()
@@ -32,12 +35,13 @@ def act1_02():
         act1_02()
 
 def act1_03():
+    '''part 3 of act 1'''
     pprint("You ask your son what's going on and why is he on antidepressant medication. He shows you a piece of paper that writes:")
     print(get_insult())
     pprint("You ask your son, why would he write that? He tells you that his classmates left this in his locker, and this isn't the first time.")
     pprint("You pause for a minute, and thinks about what you are going to say to him.")
-    input = "Say something to encourage your son:"
-    posi = sentiment.natural_language_processing(input)
+    input1 = input("Say something to encourage your son:")
+    posi = sentiment.natural_language_processing(input1)
     if posi == 1:
         pprint("Your son says thank youtells you that he really hope you could talk with him more like this in the future. He tells you that he is also behind on his math homework and asks you to help him.")
         pprint('''Choose A: Encourage your son that he can figure out the answers himself. B: Help him with his homework.''')

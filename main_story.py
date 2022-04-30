@@ -1,5 +1,6 @@
 from Negotaition import offer, no_deal, yes_deal
 from pprint import pprint
+from act2 import act2_01
 from multiple_choice import multiple_choice
 import sentiment
 from act1 import act1_01,act1_02,act1_03,opening
@@ -46,7 +47,9 @@ def main_story():
     player.son_affection += son2
     if son2 > 1:
         player.wife_affection += 1
-
+    company1 = act2_01()
+    if company1 == 0:
+        player.company_affection += 1
     print(player)
 
 def main():

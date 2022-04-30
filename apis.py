@@ -1,6 +1,8 @@
 import json
 import urllib.request
 import pprint
+import requests
+from api2 import rapid_api
 
 def get_insult():
     '''get insult quote from an api online'''
@@ -26,9 +28,20 @@ def get_math(number):
     text = " ".join(text[1:])
     return text
 
+def get_love(name1, name2):
+    '''An API that calculates the love compatibility score based on two names'''
+    url = "https://love-calculator.p.rapidapi.com/getPercentage"
+    querystring = {"sname":{name1},"fname":{name2}}
+    headers = {
+	"X-RapidAPI-Host": "love-calculator.p.rapidapi.com",
+	"X-RapidAPI-Key": rapid_api
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    return response.json()['percentage']
+
 def main():
     print(get_insult())
     print(get_math(40))
-
+    print(get_love('Nick','Julie'))
 if __name__ == "__main__":
     main()
