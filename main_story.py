@@ -24,7 +24,7 @@ def act3_preview():
     '''A preview of Act 3'''
     pprint("""If your son points is highest, you will go on trip with son after divorsing your wife. If your wife points is highest, you will go on honeymoon with your wife. If your comapany points is the highest, you will do very well in company but your family problems are exacerbated. """)
 
-def main_story():
+def main_story(name):
     '''This the the function that support the main story line'''
     son1 = 0
     son2 = 0
@@ -32,7 +32,7 @@ def main_story():
     wife2 = 0
     company1 = 0
     company2 = 0
-    player = Player(name())
+    player = Player(name)
     opening()
     deal = offer()
     if deal == 1:
@@ -74,7 +74,8 @@ def main_story():
     act3_preview()
 
 def main():
-    main_story()
+    name1 = name()
+    main_story(name1)
 
 if __name__ == "__main__":
     main()
