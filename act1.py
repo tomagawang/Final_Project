@@ -1,4 +1,5 @@
 from pprint import pprint
+from act2 import act2_02
 from multiple_choice import multiple_choice
 import sentiment
 from apis import get_insult
@@ -29,7 +30,7 @@ def act1_02():
     posi = sentiment.natural_language_processing(input1)
     if posi == 1:
         pprint("Your son opens the door and ask you what you want, you tell him that you just want to talk to him.")
-        act1_03()
+        return 1
     else:
         pprint('Still have no answer. After a little bit...')
         act1_02()
@@ -52,18 +53,20 @@ def act1_03():
             result = math_game()
             if result == 2:
                 return 3
-            if result == 1:
+            elif result == 1:
                 return 2
             else:
-                return 0
+                return 1
     else:
         pprint('Your son remains quiet and continues to play vidoe games. You are not sure what to do, so you left for work.')
         return 0
 
 def main():
     # act1_01()
-    # act1_02()
-    # act1_03()
+    # sample = 0
+    # sample += act1_02()
+    # print(sample)
+    print(act1_03())
 
 if __name__ == "__main__":
     main()

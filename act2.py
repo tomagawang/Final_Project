@@ -6,7 +6,7 @@ import sentiment
 
 def act2_01():
     '''part 1 of act 1'''
-    pprint('After helping your son with his homework, you board your helicopter and head for work accompanied by your butler. On the helicopter, your butler asks you for permission to resign. The butler shares the grewsome news that his daughter committed suicide. He has always been distant from his family. He had no clue that her daughter suffered from depression until now. He wants to spend more time from his family from now on. He understands that he has a good paying job, but he wants to be with his family in this season and takes some time to grief, he will leave at the end of the month. You express your condolences to the Butler and accept his resignition.')
+    pprint('After interacting with your son, you board your helicopter and head for work accompanied by your butler. On the helicopter, your butler asks you for permission to resign. The butler shares the grewsome news that his daughter committed suicide. He has always been distant from his family. He had no clue that her daughter suffered from depression until now. He wants to spend more time from his family from now on. He understands that he has a good paying job, but he wants to be with his family in this season and takes some time to grief, he will leave at the end of the month. You express your condolences to the Butler and accept his resignition.')
     pprint('As you arrive at your desk, you ponder about your future. As you are reading through your emails, you spot an old draft of resignation letter. You open it and decide to finally finish it.')
     pprint("After a board meeting, you ask the chairmen to speak in private.")
     pprint("Make a choice; A: Hand him the resignition letter and leave. B: Hand him the resignition letter and wait for his response. ")
@@ -25,7 +25,7 @@ def act2_02():
     answer = multiple_choice()
     if answer == 0:
         pprint("Your wife is actually dissapointed because she thought you actually had a heart. She really had enough of this marriage and she wants a divorse.")
-        act2_03()
+        return 0
     if answer == 1:
         input1 = input("try to say something to convince your wife:")
         posi = sentiment.natural_language_processing(input1)
