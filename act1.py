@@ -43,7 +43,7 @@ def act1_03():
     input1 = input("Say something to encourage your son:")
     posi = sentiment.natural_language_processing(input1)
     if posi == 1:
-        pprint("Your son says thank youtells you that he really hope you could talk with him more like this in the future. He tells you that he is also behind on his math homework and asks you to help him.")
+        pprint("Your son says thank you and tells you that he really hope you could talk with him more like this in the future. He tells you that he is also behind on his math homework and asks you to help him.")
         pprint('''Choose A: Encourage your son that he can figure out the answers himself. B: Help him with his homework.''')
         answer1 = multiple_choice()
         if answer1 == 0:
@@ -60,8 +60,10 @@ def act1_03():
         pprint('Your son remains quiet and continues to play vidoe games. You are not sure what to do, so you left for work.')
         return 0
 
-
 def main():
-    act1_03()
+    # act1_01()
+    # act1_02()
+    # act1_03()
+
 if __name__ == "__main__":
     main()

@@ -1,9 +1,6 @@
 from Negotaition import offer, no_deal, yes_deal
-from pprint import pprint
-from act2 import act2_01
-from multiple_choice import multiple_choice
-import sentiment
-from act1 import act1_01,act1_02,act1_03,opening
+from act2 import act2_01,act2_02,act2_04
+from act1 import act1_01,act1_02,opening
 
 def name():
         name = input("What is your name? Enter here:")
@@ -22,6 +19,9 @@ class Player:
         '''return a summary of the points the player have.'''
         return f'Hi {self.name}, you currently have {self.son_affection} son affection points and {self.wife_affection} wife affection points and {self.company_affection} company affection points.'
 
+
+def act3_preview():
+    pass
 
 def main_story():
     '''This the the function that support the main story line'''
@@ -50,11 +50,19 @@ def main_story():
     company1 = act2_01()
     if company1 == 0:
         player.company_affection += 1
+    wife1 = act2_02()
+    player.wife_affection += wife1
+    company2 = act2_04()
+    if company2 == 0:
+        player.wife_affection += 1
+        player.son_affection += 1
+        player.company_affection -= 1
+    player.company_affection += company2
     print(player)
 
 def main():
+    
     main_story()
-
 
 if __name__ == '__main__':
 
