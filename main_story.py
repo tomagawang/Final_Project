@@ -25,7 +25,7 @@ def act3_preview():
     pprint("""If your son points is highest, you will go on trip with son after divorsing your wife. If your wife points is highest, you will go on honeymoon with your wife. If your comapany points is the highest, you will do very well in company but your family problems are exacerbated. """)
 
 def main_story(name):
-    '''This the the function that support the main story line'''
+    '''This the the function that support the main story line and counting points'''
     son1 = 0
     son2 = 0
     wife1 = 0
